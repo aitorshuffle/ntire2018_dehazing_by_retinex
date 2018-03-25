@@ -39,7 +39,7 @@ def my_config():
 @ex.automain
 def lrsr4dehazing(retinex_method, N, n, k1, k2, normalize, fpath_in, fpath_out):
     if retinex_method.lower() == 'lrsr':
-        call_str = ['../lrsr_retinex4dehazing/lrsr', fpath_in, fpath_out, str(N),  str(n), str(k1), str(k2), str(normalize)]
+        call_str = ['./lrsr_retinex4dehazing/lrsr', fpath_in, fpath_out, str(N),  str(n), str(k1), str(k2), str(normalize)]
     call(call_str)
 	
 	## apply median filtering
