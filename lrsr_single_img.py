@@ -25,8 +25,8 @@ def my_config():
     track = 'Indoor'  # Outdoor
 
     retinex_method = 'lrsr'
-    fpath_in = './in/test_img.png'  #needs to be in png format
-    basename = os.path.basename(fpath_in)
+    basename = 'hazy1.png'  #needs to be in png format
+    fpath_in = os.path.join('./in/', basename)
     fpath_out = os.path.join('./res/', basename)
 
     N = 1
