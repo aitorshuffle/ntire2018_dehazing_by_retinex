@@ -22,18 +22,24 @@ def my_config():
     """
     user-tunnable vars for experiments
     """
+    track = 'Indoor'  # Outdoor
+
     retinex_method = 'lrsr'
-    N=1
-    n=341
-    track = 'Indoor' #Outdoor
-    seed = 1337
+    fpath_in = './in/test_img.png'  #needs to be in png format
+    basename = os.path.basename(fpath_in)
+    fpath_out = os.path.join('./res/', basename)
+
+    N = 1
+    n = 341
+    k1 = 12
+    k2 = k1
+    normalize = 0
+
 
 @ex.automain
 def lrsr4dehazing(retinex_method, N, n, k1, k2, normalize, fpath_in, fpath_out):
     if retinex_method.lower() == 'lrsr':
         call_str = ['../lrsr_retinex4dehazing/lrsr', fpath_in, fpath_out, str(N),  str(n), str(k1), str(k2), str(normalize)]
-        # call_str = ['./MSR_original', '-N', to_display_domain_dict[to_display_domain_method], '-g', str(gamma), '-W', wb_method_dict[wb_method], '-A', str(A[0]), '-B', str(A[1]), '-C', str(A[2]), '-l', str(l), '-R', str(R), fpath_in, fpath_out, 'dummy']
-		
     call(call_str)
 	
 	## apply median filtering
