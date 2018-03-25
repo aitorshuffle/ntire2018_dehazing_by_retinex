@@ -26,14 +26,14 @@ def my_config():
 
     retinex_method = 'lrsr'
     basename = 'hazy1.png'  #needs to be in png format
-    fpath_in = os.path.join('./in/', basename)
-    fpath_out = os.path.join('./res/', basename)
+    fpath_in = os.path.join('./in', basename)
+    fpath_out = os.path.join('./res', basename)
 
     N = 1
     n = 341
     k1 = 12
     k2 = k1
-    normalize = 0
+    normalize = False
 
 
 @ex.automain
